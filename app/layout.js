@@ -1,6 +1,9 @@
 import localFont from "next/font/local";
 import "./globals.css";
-
+import Link from "next/link";
+import NavBar from "./components/navbar/navbar";
+import Footer from "./components/footer/footer";
+import icon from "../public/images/main4.jpg"
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -20,10 +23,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        <title>ST PIZZA </title>
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased    w-[95%] mx-auto xl:w-[81%]`}>
+        <NavBar />
         {children}
+       <Footer/>
       </body>
     </html>
   );
